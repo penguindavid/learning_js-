@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Solicitar un dato por pantalla en una ventana emergente y mostarlos como contenido de un párrafo</title>
+</head>
+<body>
+    <h1>Dato por pantalla emergente</h1>
+    <p id="parrafoResultado">El texto ingresado aparecerá aquí.</p>
+
+    <script>
+        let datoIngresado = prompt("Por favor, ingrese un dato:"); 
+        let parrafo = document.getElementById("parrafoResultado");
+
+        if (datoIngresado !== null && parrafo !== null) {
+            parrafo.textContent = datoIngresado; 
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>lista plegable</title>
+</head>
+<body>
+    <h1>lista plegable</h1>
+    <p id="textoMuestra" style="font-size: 18px;">Texto de prueba para modificar estilo.</p>
+
+    <label for="selectNegrita">Negrita:</label>
+    <select id="selectNegrita">
+        <option value="normal">No</option>
+        <option value="bold">Sí</option>
+    </select>
+
+    <label for="selectCursiva">Cursiva:</label>
+    <select id="selectCursiva">
+        <option value="normal">No</option>
+        <option value="italic">Sí</option>
+    </select>
+
+    <script>
+        const textoMuestra = document.getElementById("textoMuestra");
+        const selectNegrita = document.getElementById("selectNegrita");
+        const selectCursiva = document.getElementById("selectCursiva");
+
+        function actualizarEstilo() {
+            let valorNegrita = selectNegrita.value;
+            let valorCursiva = selectCursiva.value;
+
+            textoMuestra.style.fontWeight = valorNegrita;
+            textoMuestra.style.fontStyle = valorCursiva;
+        }
+
+        selectNegrita.addEventListener("change", actualizarEstilo);
+        selectCursiva.addEventListener("change", actualizarEstilo);
+    </script>
+</body>
+</html>

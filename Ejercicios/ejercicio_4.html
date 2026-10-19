@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cargar una lista plegable con nombre de imágenes que tienes guardadas en disco y cuando se seleccione una de la lista, visualizar esa imagen.</title>
+</head>
+<body>
+    <h1>Visaulizar imagen</h1>
+    <label for="selectImagen">Selecciona una imagen:</label>
+    <select id="selectImagen">
+        <option value="">--Seleccione una imagen--</option>
+        <option value="img/images.jpeg">Pokemon</option>
+        <option value="img/logoSistemas.jpg">logo Sistemas/option>
+        <option value="img/escudoGuanenta.png">Escudo Guanenta</option>
+    </select>
+    <br><br>
+    <img id="imagenVisor" src="" alt="Vista previa de la imagen" style="max-width: 400px; display: none;">
+
+    <script>
+        const selectImagen = document.getElementById("selectImagen");
+        const imagenVisor = document.getElementById("imagenVisor");
+
+        selectImagen.addEventListener("change", function() {
+            let rutaImagen = selectImagen.value;
+            if (rutaImagen !== "") {
+                imagenVisor.src = rutaImagen;
+                imagenVisor.style.display = "block";
+            } else {
+                imagenVisor.src = "";
+                imagenVisor.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>

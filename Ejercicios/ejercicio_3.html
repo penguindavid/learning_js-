@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Solicitar en un `<input>` un texto y mostrarlo en una capa `<div>` pulsando sobre un botón.</title>
+</head>
+<body>
+    <h1><Input></Input></h1>
+    <input type="text" id="inputTexto" placeholder="Escribe un texto aquí...">
+    <button id="btnMostrar">Mostrar Texto</button>
+    <div id="capaResultado" style="margin-top: 15px; padding: 10px; border: 1px solid #000;"></div>
+
+    <script>
+        const inputTexto = document.getElementById("inputTexto");
+        const btnMostrar = document.getElementById("btnMostrar");
+        const capaResultado = document.getElementById("capaResultado");
+
+        btnMostrar.addEventListener("click", function() {
+            let texto = inputTexto.value;
+            capaResultado.textContent = texto;
+        });
+    </script>
+</body>
+</html>
